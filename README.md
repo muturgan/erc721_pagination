@@ -7,7 +7,7 @@ provides useful view functions for getting a ERC721 tokens list on your frontend
 ## Add view functions to your ERC721 contract
 ``` js
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.1;
+pragma solidity ^0.8.12; // using erc721_pagination@^1.0.0 with a pragma solidity below 0.8.12
 
 import "erc721_pagination/contracts/ERC721Pagination.sol";
 

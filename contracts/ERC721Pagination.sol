@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // https://github.com/muturgan/erc721_pagination
 // https://www.npmjs.com/package/erc721_pagination
-pragma solidity ^0.8.1;
+pragma solidity ^0.8.12;
 
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol';
@@ -43,16 +43,14 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 		uint takeTo = skip + pageSize;
 		takeTo = takeTo > totalSupply ? totalSupply : takeTo;
 
-		bytes memory b;
+		string memory str;
 
 		for (uint i = skip + 1; i <= takeTo; i++) {
 			string memory closeTag = i == takeTo ? '"]' : '"],';
-			b = abi.encodePacked(b, '[', i.toString(), ',"', this.tokenURI(i), closeTag);
+			str = string.concat(str, '[', i.toString(), ',"', this.tokenURI(i), closeTag);
 		}
 
-		b = abi.encodePacked('{"tokens":[', b, ']}');
-
-		return string(b);
+		return string.concat('{"tokens":[', str, ']}');
 	}
 
 	function getTokensOf(address holder, uint _pageNumber, uint _pageSize) external view returns(string memory) {
@@ -80,7 +78,7 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 		uint counted;
 		uint skiped;
 		uint taken;
-		bytes memory b;
+		string memory str;
 
 		for (uint i = 1; i <= this.totalSupply(); i++) {
 			if (ownerOf(i) == holder) {
@@ -94,16 +92,14 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 					taken++;
 					bool isThatsAll = counted == holderBalance || taken == pageSize;
 					string memory closeTag = isThatsAll ? '"]' : '"],';
-					b = abi.encodePacked(b, '[', i.toString(), ',"', this.tokenURI(i), closeTag);
+					str = string.concat(str, '[', i.toString(), ',"', this.tokenURI(i), closeTag);
 					if (isThatsAll) {
 						break;
 					}
 			}
 		}
 
-		b = abi.encodePacked('{"tokens":[', b, ']}');
-
-		return string(b);
+		return string.concat('{"tokens":[', str, ']}');
 	}
 
 
