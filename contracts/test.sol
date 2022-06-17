@@ -3,7 +3,7 @@ pragma solidity ^0.8.1;
 
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol';
-import './pagination.sol';
+import './ERC721Pagination.sol';
 
 
 contract TestPagination is ERC721Pagination

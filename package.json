@@ -1,7 +1,7 @@
 {
   "name": "erc721_pagination",
-  "version": "1.0.0",
-  "description": "erc721_pagination",
+  "version": "1.0.3",
+  "description": "provides useful view functions for getting a ERC721 tokens list on your frontend",
   "author": "Andrey Sakharov <caxap_8787@mail.ru> (https://www.linkedin.com/in/andrey-sakharov/)",
   "license": "MIT",
   "engines": {
@@ -16,13 +16,26 @@
     "test": "npm run compile && hardhat test",
     "coverage": "npm run compile && hardhat coverage",
     "lint_staged": "lint-staged",
+		"prepublishOnly": "mkdir -p build/contracts && cp ./artifacts/contracts/ERC721Pagination.sol/ERC721Pagination.json ./build/contracts/ERC721Pagination.json",
     "prepare": "husky install"
   },
+	"files": [
+		"build/contracts/ERC721Pagination.json",
+		"contracts/ERC721Pagination.sol"
+	],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/muturgan/erc721_pagination.git"
   },
-  "keywords": [],
+  "keywords": [
+		"solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+		"ERC721",
+		"json",
+		"pagination"
+	],
   "bugs": {
     "url": "https://github.com/muturgan/erc721_pagination/issues"
   },

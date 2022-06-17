@@ -4,6 +4,7 @@ artifacts
 deployments
 typechain
 typechain-types
+build
 
 # Logs
 logs
