@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
+// https://github.com/muturgan/erc721_pagination
+// https://www.npmjs.com/package/erc721_pagination
 pragma solidity ^0.8.1;
 
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
