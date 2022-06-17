@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import { HardhatUserConfig } from 'hardhat/config';
+import { HARDHAT_PROVIDER_URL } from './constants';
 
 import 'hardhat-deploy';
 import 'hardhat-deploy-ethers';
@@ -15,7 +16,7 @@ dotenv.config();
 
 const config: HardhatUserConfig = {
 	solidity: {
-		version: '0.8.0',
+		version: '0.8.1',
 		settings: {
 			optimizer: {
 				enabled: true,
@@ -28,6 +29,9 @@ const config: HardhatUserConfig = {
 		hardhat: {
 			// the url is 'http://localhost:8545' but you should not define it
 		},
+		localhost: {
+			url: HARDHAT_PROVIDER_URL,
+		},
 		rinkeby: {
 			url: `https://rinkeby.infura.io/v3/${process.env.INFURA_ID}`,
 			accounts: [process.env.DEPLOYER_PRIVATE_KEY as string],
@@ -38,7 +42,8 @@ const config: HardhatUserConfig = {
 	},
 	namedAccounts: {
 		deployer: 0,
-		dnaOwner: 1,
+		user1: 1,
+		user2: 2,
 	},
 };
 
