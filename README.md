@@ -13,12 +13,12 @@ import "erc721_pagination/contracts/ERC721Pagination.sol";
 
 contract YourCollectible is ERC721Pagination
 {
-    constructor()
+	constructor()
 		ERC721("Your Collection Name", "YCN")
 		ERC721Pagination(20, 100) // defaultPageSize, maxPageSize
 	{}
 
-    // ...
+	// ...
 }
 ```
 
