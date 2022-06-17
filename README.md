@@ -4,7 +4,25 @@
 
 provides useful view functions for getting a ERC721 tokens list on your frontend
 
-## Example
+## Add view functions to your ERC721 contract
+``` js
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.1;
+
+import "erc721_pagination/contracts/ERC721Pagination.sol";
+
+contract YourCollectible is ERC721Pagination
+{
+    constructor()
+		ERC721("Your Collection Name", "YCN")
+		ERC721Pagination(20, 100) // defaultPageSize, maxPageSize
+	{}
+
+    // ...
+}
+```
+
+## Usage on frontend
 ``` js
 import { ethers } from 'ethers';
 import { abi } from 'erc721_pagination';
