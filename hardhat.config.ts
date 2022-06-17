@@ -30,7 +30,7 @@ const config: HardhatUserConfig = {
 		},
 		rinkeby: {
 			url: `https://rinkeby.infura.io/v3/${process.env.INFURA_ID}`,
-			accounts: [process.env.DEPLOYER_PRIVATE_KEY_TEST as string],
+			accounts: [process.env.DEPLOYER_PRIVATE_KEY as string],
 		},
 	},
 	etherscan: {
