@@ -1,6 +1,6 @@
 {
   "name": "erc721_pagination",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "provides useful view functions for getting a ERC721 tokens list on your frontend",
   "author": "Andrey Sakharov <caxap_8787@mail.ru> (https://www.linkedin.com/in/andrey-sakharov/)",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "test": "npm run compile && hardhat test",
     "coverage": "npm run compile && hardhat coverage",
     "lint_staged": "lint-staged",
-		"prepublishOnly": "hardhat clean && hardhat compile && mkdir -p build/contracts && cp ./artifacts/contracts/ERC721Pagination.sol/ERC721Pagination.json ./build/contracts/ERC721Pagination.json && cp ./artifacts/contracts/IERC721Pagination.sol/IERC721Pagination.json ./build/contracts/IERC721Pagination.json",
+		"prepublishOnly": "./prepublish.sh",
     "prepare": "husky install"
   },
 	"files": [
