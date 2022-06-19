@@ -7,7 +7,7 @@ provides useful view functions for getting a ERC721 tokens list on your frontend
 ## Add view functions to your ERC721 contract
 ``` js
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.1;
+pragma solidity ^0.8.12; // using erc721_pagination@^1.0.0 with a pragma solidity below 0.8.12
 
 import "erc721_pagination/contracts/ERC721Pagination.sol";
 
@@ -46,7 +46,21 @@ const yourErc721 = new ethers.Contract(
 	console.log(JSON.parse(json2)); // {tokens: [[1, "url1"], [2, "url2"]]}
 
 	JSON.parse(json2).tokens.map(([tokenId, tokenUri]) => {
-		console.log(`a uri of token with id ${tokenId} is ${tokenUri}`);
+		console.log(`an uri of token with id ${tokenId} is ${tokenUri}`);
+	});
+})();
+```
+
+## Typescript usage
+``` js
+import { ERC721Pagination, ITokensList, TokenData } from 'erc721_pagination';
+
+(async () => {
+	const contract = await ethers.getContractAt<ERC721Pagination>(abi, 'contract address');
+	const json = await contract.getAllTokens(1, 5);
+	const tokensList: ITokensList = JSON.parse(json);
+	tokensList.tokens.forEach(([tokenId, tokenUri]: TokenData) => {
+		console.log(`${tokenId} -> ${tokenUri}`);
 	});
 })();
 ```
