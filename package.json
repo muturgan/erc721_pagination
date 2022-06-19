@@ -1,6 +1,6 @@
 {
   "name": "erc721_pagination",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "provides useful view functions for getting a ERC721 tokens list on your frontend",
   "author": "Andrey Sakharov <caxap_8787@mail.ru> (https://www.linkedin.com/in/andrey-sakharov/)",
   "license": "MIT",
@@ -32,7 +32,8 @@
 		"index.mjs",
 		"index.d.ts",
 		"build/contracts/ERC721Pagination.json",
-		"contracts/ERC721Pagination.sol"
+		"contracts/ERC721Pagination.sol",
+		"typechain-types"
 	],
   "repository": {
     "type": "git",
