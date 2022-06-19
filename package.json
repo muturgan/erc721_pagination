@@ -24,7 +24,7 @@
     "test": "npm run compile && hardhat test",
     "coverage": "npm run compile && hardhat coverage",
     "lint_staged": "lint-staged",
-		"prepublishOnly": "mkdir -p build/contracts && cp ./artifacts/contracts/ERC721Pagination.sol/ERC721Pagination.json ./build/contracts/ERC721Pagination.json",
+		"prepublishOnly": "hardhat clean && hardhat compile && mkdir -p build/contracts && cp ./artifacts/contracts/ERC721Pagination.sol/ERC721Pagination.json ./build/contracts/ERC721Pagination.json",
     "prepare": "husky install"
   },
 	"files": [
