@@ -65,3 +65,16 @@ import { ERC721Pagination, ITokensList, TokenData } from 'erc721_pagination';
 	});
 })();
 ```
+
+## ERC165 support
+``` js
+import { ERC721_PAGINATION_INTREFACE_ID } from 'erc721_pagination';
+
+(async () => {
+	const erc721PaginationInterface = await contract.erc721PaginationInterface();
+	console.assert(erc721PaginationInterface === ERC721_PAGINATION_INTREFACE_ID);
+
+	const isErc721Pagination = await contract.supportsInterface(ERC721_PAGINATION_INTREFACE_ID);
+	console.assert(isErc721Pagination === true);
+})();
+```

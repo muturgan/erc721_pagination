@@ -1,6 +1,6 @@
 import { assert, expect } from './chai';
 import { deployments, ethers, getNamedAccounts } from 'hardhat';
-import { ZERO_ADDRESS } from '../constants';
+import { ERC721_PAGINATION_INTREFACE_ID, ZERO_ADDRESS } from '../constants';
 import { TestPagination } from '../typechain-types';
 
 describe('Pagination', () => {
@@ -68,6 +68,12 @@ describe('Pagination', () => {
 
 		const isErc165 = await testPagination.supportsInterface('0x01ffc9a7');
 		assert.strictEqual(isErc165, true);
+
+		const isErc721Pagination = await testPagination.supportsInterface(ERC721_PAGINATION_INTREFACE_ID);
+		assert.strictEqual(isErc721Pagination, true);
+
+		const erc721PaginationInterface = await testPagination.erc721PaginationInterface();
+		assert.strictEqual(erc721PaginationInterface, ERC721_PAGINATION_INTREFACE_ID);
 
 		const balanceBefore = await testPagination.balanceOf(user1);
 		await testPagination.burn(3);

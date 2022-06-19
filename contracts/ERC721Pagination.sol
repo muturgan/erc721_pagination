@@ -6,9 +6,10 @@ pragma solidity ^0.8.12;
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol';
 import '@openzeppelin/contracts/utils/Strings.sol';
+import './IERC721Pagination.sol';
 
 
-abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
+abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage, IERC721Pagination
 {
 	using Strings for uint256;
 
@@ -21,6 +22,10 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 		DEFAULT_PAGE_SIZE = defaultPageSize;
 		require(maxPageSize >= defaultPageSize, 'invalid maxPageSize');
 		MAX_PAGE_SIZE = maxPageSize;
+	}
+
+	function erc721PaginationInterface() public pure returns(bytes4) {
+		return type(IERC721Pagination).interfaceId;
 	}
 
 	function getAllTokens(uint _pageNumber, uint _pageSize) external view returns(string memory) {
@@ -53,12 +58,12 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 		return string.concat('{"tokens":[', str, ']}');
 	}
 
-	function getTokensOf(address holder, uint _pageNumber, uint _pageSize) external view returns(string memory) {
-		if (holder == address(0)) {
+	function getTokensOf(address _holder, uint _pageNumber, uint _pageSize) external view returns(string memory) {
+		if (_holder == address(0)) {
 			return '{"tokens":[]}';
 		}
 
-		uint holderBalance = balanceOf(holder);
+		uint holderBalance = balanceOf(_holder);
 		if (holderBalance == 0) {
 			return '{"tokens":[]}';
 		}
@@ -81,7 +86,7 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 		string memory str;
 
 		for (uint i = 1; i <= this.totalSupply(); i++) {
-			if (ownerOf(i) == holder) {
+			if (ownerOf(i) == _holder) {
 					counted++;
 
 					if (skiped < skip) {
@@ -117,7 +122,7 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage
 	}
 
 	function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, ERC721Enumerable) returns (bool) {
-		return super.supportsInterface(interfaceId);
+		return interfaceId == type(IERC721Pagination).interfaceId || super.supportsInterface(interfaceId);
 	}
 	// >>>> These functions are overrides required by Solidity.
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.1.0
+
+#### Added
+
+- an **IERC721Pagination** interface was added
+
 ### 2.0.0
 
 #### Breaking Changes:
