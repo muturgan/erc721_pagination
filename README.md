@@ -53,9 +53,10 @@ const yourErc721 = new ethers.Contract(
 
 ## Typescript usage
 ``` js
-import { TokenData, ITokensList } from 'erc721_pagination';
+import { ERC721Pagination, ITokensList, TokenData } from 'erc721_pagination';
 
 (async () => {
+	const contract = await ethers.getContractAt<ERC721Pagination>(abi, 'contract address');
 	const json = await contract.getAllTokens(1, 5);
 	const tokensList: ITokensList = JSON.parse(json);
 	tokensList.tokens.forEach(([tokenId, tokenUri]: TokenData) => {
