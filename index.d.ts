@@ -1,6 +1,6 @@
 import { BigNumberish, CallOverrides } from 'ethers';
 
-export declare const abi: any[];
+export { abi } from './build/contracts/ERC721Pagination.json';
 
 export type TokenData = [number, string];
 export interface ITokensList {
