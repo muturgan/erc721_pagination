@@ -1,6 +1,6 @@
 {
   "name": "erc721_pagination",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "provides useful view functions for getting a ERC721 tokens list on your frontend",
   "author": "Andrey Sakharov <caxap_8787@mail.ru> (https://www.linkedin.com/in/andrey-sakharov/)",
   "license": "MIT",
