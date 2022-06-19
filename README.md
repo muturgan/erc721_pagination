@@ -46,7 +46,7 @@ const yourErc721 = new ethers.Contract(
 	console.log(JSON.parse(json2)); // {tokens: [[1, "url1"], [2, "url2"]]}
 
 	JSON.parse(json2).tokens.map(([tokenId, tokenUri]) => {
-		console.log(`a uri of token with id ${tokenId} is ${tokenUri}`);
+		console.log(`an uri of token with id ${tokenId} is ${tokenUri}`);
 	});
 })();
 ```
