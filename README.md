@@ -1,5 +1,6 @@
 # erc721_pagination
 ![NPM Version Badge](https://img.shields.io/npm/v/erc721_pagination?logo=npm)
+![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/muturgan/5456fa372e2a643b9560516090e7283f/raw/erc721_pagination_coverage.json)
 ![License Badge](https://img.shields.io/npm/l/erc721_pagination)
 
 provides useful view functions for getting a ERC721 tokens list on your frontend
