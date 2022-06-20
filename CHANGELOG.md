@@ -1,5 +1,11 @@
 # Changelog
 
+### 2.2.0
+
+#### Breaking Changes:
+
+- the **erc721PaginationInterface** function moved to a separate abstract contract
+
 ### 2.1.0
 
 #### Added
@@ -10,7 +16,7 @@
 
 #### Breaking Changes:
 
-- using a new solidity feature - string.concat (pragma solidity ^0.8.12)
+- using a new solidity feature - **string.concat** (pragma solidity ^0.8.12)
 
 ### 1.0.0
 

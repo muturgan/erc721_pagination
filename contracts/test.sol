@@ -2,9 +2,10 @@
 pragma solidity ^0.8.12;
 
 import './ERC721Pagination.sol';
+import './ERC721PaginationInterfaceId.sol';
 
 
-contract TestPagination is ERC721Pagination
+contract TestPagination is ERC721Pagination, ERC721PaginationInterfaceId
 {
 	uint private _tokenIdCounter;
 

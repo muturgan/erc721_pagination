@@ -24,10 +24,6 @@ abstract contract ERC721Pagination is ERC721Enumerable, ERC721URIStorage, IERC72
 		MAX_PAGE_SIZE = maxPageSize;
 	}
 
-	function erc721PaginationInterface() public pure returns(bytes4) {
-		return type(IERC721Pagination).interfaceId;
-	}
-
 	function getAllTokens(uint _pageNumber, uint _pageSize) external view returns(string memory) {
 		uint totalSupply = this.totalSupply();
 		if (totalSupply == 0) {
