@@ -4,7 +4,7 @@
   "description": "provides useful view functions for getting a ERC721 tokens list on your frontend",
   "author": "Andrey Sakharov <caxap_8787@mail.ru> (https://www.linkedin.com/in/andrey-sakharov/)",
   "license": "MIT",
-	"main": "index.cjs",
+  "main": "index.cjs",
   "typings": "index.d.ts",
   "exports": {
     ".": {
@@ -24,57 +24,57 @@
     "test": "npm run compile && hardhat test",
     "coverage": "npm run compile && hardhat coverage",
     "lint_staged": "lint-staged",
-		"prepublishOnly": "./prepublish.sh",
+    "prepublishOnly": "./prepublish.sh",
     "prepare": "husky install"
   },
-	"files": [
-		"index.cjs",
-		"index.mjs",
-		"index.d.ts",
-		"build/contracts/ERC721Pagination.json",
-		"contracts/ERC721Pagination.sol",
-		"typechain-types"
-	],
+  "files": [
+    "index.cjs",
+    "index.mjs",
+    "index.d.ts",
+    "build/contracts/ERC721Pagination.json",
+    "contracts/ERC721Pagination.sol",
+    "typechain-types"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/muturgan/erc721_pagination.git"
   },
   "keywords": [
-		"solidity",
+    "solidity",
     "ethereum",
     "smart",
     "contracts",
-		"ERC721",
-		"json",
-		"pagination"
-	],
+    "ERC721",
+    "json",
+    "pagination"
+  ],
   "bugs": {
     "url": "https://github.com/muturgan/erc721_pagination/issues"
   },
   "homepage": "https://github.com/muturgan/erc721_pagination#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
-    "@openzeppelin/contracts": "^4.6.0",
+    "@openzeppelin/contracts": "^4.7.1",
     "@typechain/ethers-v5": "^10.1.0",
     "@typechain/hardhat": "^6.1.2",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^14.18.21",
+    "@types/node": "^14.18.22",
     "chai": "^4.3.6",
     "chai-ethers": "0.0.1",
     "dotenv": "^16.0.1",
     "es5-ext": "0.10.53",
-    "ethers": "^5.6.8",
-    "hardhat": "^2.9.9",
-    "hardhat-deploy": "^0.11.10",
+    "ethers": "^5.6.9",
+    "hardhat": "^2.10.1",
+    "hardhat-deploy": "^0.11.11",
     "hardhat-deploy-ethers": "^0.3.0-beta.13",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.2",
+    "lint-staged": "^13.0.3",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.21",
-    "ts-node": "^10.8.1",
+    "ts-node": "^10.9.1",
     "tslint": "^6.1.3",
     "typechain": "^8.1.0",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.4"
   }
 }
